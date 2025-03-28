@@ -17,13 +17,13 @@ def rod_cutting_memo(prices, n, memo):
     return max_revenue
 
 prices = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
-test_lengths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+test_lengths = [2, 4, 6, 8, 10]
 
-print("\nAlgorithm 2: Memoized Top-Down DP Rod Cutting")
+print("Memoized Cut Rod using ChatGPT")
 for n in test_lengths:
     memo_calls = 0  # reset counter for each test
     memo = {}       # reset memo for each test case
     start_time = time.perf_counter()
     revenue = rod_cutting_memo(prices, n, memo)
     end_time = time.perf_counter()
-    print(f"Rod length: {n} | Maximum revenue: {revenue} | Recursive calls: {memo_calls} | Execution time: {end_time - start_time:.6f} seconds")
+    print(f"Rod length: {n} | Maximum revenue: {revenue} | Recursive calls: {memo_calls} | Execution time: {end_time - start_time:.8f} seconds")
