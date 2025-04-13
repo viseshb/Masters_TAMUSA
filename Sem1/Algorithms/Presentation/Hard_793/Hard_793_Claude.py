@@ -36,22 +36,31 @@ class Solution:
         return first_with_k_plus_1 - first_with_k
     
 
-k= 3
+test_cases = [
+    (51, 5),
+    (100, 5),
+    (84, 5),
+    (62, 5),
+    (73, 0),
+    (76, 5),
+    (27, 5),
+    (51, 5),
+    (85, 0),
+    (38, 5),
+]
+
+
 sol = Solution()
-
-# Run multiple iterations
-iterations = 10
 total_time = 0.0
-result = None
 
-for _ in range(iterations):
+for k, expected in test_cases:
     start_time = time.perf_counter()
     result = sol.preimageSizeFZF(k)
     end_time = time.perf_counter()
     execution_time = end_time - start_time
     total_time += execution_time
-    print(f"Execution time: {execution_time:.12f} seconds")
+    assert result == expected, f"Test failed for k({k}). Expected {expected}, got {result}"
+    print(f"Test passed for k=({k}). Execution time: {execution_time:.12f} seconds")
 
-average_time = total_time / iterations
-print("\nResult:", result)
-print(f"Average execution time over {iterations} runs: {average_time:.12f} seconds")     
+print(f"\nAll test cases passed successfully!")
+print(f"Total execution time for all test cases: {total_time:.12f} seconds")  

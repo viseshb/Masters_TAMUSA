@@ -1,74 +1,55 @@
 #4. Median of Two Sorted Arrays
 #https://leetcode.com/problems/median-of-two-sorted-arrays/description/
 
+from cmath import inf
 import time
-
+from typing import List
 class Solution:
-    def findMedianSortedArrays(self, nums1, nums2):
-        n1 = len(nums1)
-        n2 = len(nums2)
-        
-        # Ensure nums1 is the smaller array for simplicity
-        if n1 > n2:
-            return self.findMedianSortedArrays(nums2, nums1)
-        
-        n = n1 + n2
-        left = (n1 + n2 + 1) // 2 # Calculate the left partition size
-        low = 0
-        high = n1
-        
-        while low <= high:
-            mid1 = (low + high) // 2 # Calculate mid index for nums1
-            mid2 = left - mid1 # Calculate mid index for nums2
-            
-            l1 = float('-inf')
-            l2 = float('-inf')
-            r1 = float('inf')
-            r2 = float('inf')
-            
-            # Determine values of l1, l2, r1, and r2
-            if mid1 < n1:
-                r1 = nums1[mid1]
-            if mid2 < n2:
-                r2 = nums2[mid2]
-            if mid1 - 1 >= 0:
-                l1 = nums1[mid1 - 1]
-            if mid2 - 1 >= 0:
-                l2 = nums2[mid2 - 1]
-            
-            if l1 <= r2 and l2 <= r1:
-                # The partition is correct, we found the median
-                if n % 2 == 1:
-                    return max(l1, l2)
-                else:
-                    return (max(l1, l2) + min(r1, r2)) / 2.0
-            elif l1 > r2:
-                # Move towards the left side of nums1
-                high = mid1 - 1
-            else:
-                # Move towards the right side of nums1
-                low = mid1 + 1
-        
-        return 0 # If the code reaches here, the input arrays were not sorted.
-# Test case
-nums1 = [1, 2]
-nums2 = [3, 4]
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        def f(i: int, j: int, k: int) -> int:
+            if i >= m:
+                return nums2[j + k - 1]
+            if j >= n:
+                return nums1[i + k - 1]
+            if k == 1:
+                return min(nums1[i], nums2[j])
+            p = k // 2
+            x = nums1[i + p - 1] if i + p - 1 < m else inf
+            y = nums2[j + p - 1] if j + p - 1 < n else inf
+            return f(i + p, j, k - p) if x < y else f(i, j + p, k - p)
+
+        m, n = len(nums1), len(nums2)
+        a = f(0, 0, (m + n + 1) // 2)
+        b = f(0, 0, (m + n + 2) // 2)
+        return (a + b) / 2
+
+
 
 sol = Solution()
 
-# Run multiple iterations
-iterations = 10
+test_cases = [
+    ([1, 3], [2], 2.0),
+    ([1, 2], [3, 4], 2.5),
+    ([20, 67], [37, 85], 52.0),
+    ([1, 2, 13, 22, 34, 46, 63, 86], [59, 80], 40.0),
+    ([8, 57, 82, 87], [8, 18, 20, 23, 40, 41, 54, 63, 72, 93], 47.5),
+    ([3, 36, 78], [13, 20, 28, 45, 59, 89], 36.0),
+    ([17, 34, 43, 48, 51, 53, 83, 88], [43, 48, 54, 78, 88], 51.0),
+    ([21, 28, 53, 63, 94], [6, 9, 25, 27, 31, 55, 60, 67, 78], 42.0),
+    ([17, 50, 54], [1, 20, 46, 52, 53, 62, 63, 66, 70], 52.5),
+    ([11, 13, 15, 27, 29, 55, 74, 89, 96], [9, 39, 72], 34.0)
+]
 total_time = 0.0
 result = None
 
-for _ in range(iterations):
+for nums1, nums2, expected in test_cases:
     start_time = time.perf_counter()
     result = sol.findMedianSortedArrays(nums1, nums2)
     end_time = time.perf_counter()
     execution_time = end_time - start_time
     total_time += execution_time
-    print(f"Execution time: {execution_time:.12f} seconds")
+    assert result == expected, f"Test failed for nums1={nums1}, nums2={nums2}. Expected {expected}, got {result}"
+    print(f"Test passed for nums1={nums1}, nums2={nums2}. Execution time: {execution_time:.12f} seconds")
 
-average_time = total_time / iterations
-print("\nResult:", result)
-print(f"Average execution time over {iterations} runs: {average_time:.12f} seconds")
+print(f"\nAll test cases passed successfully!")
+print(f"Total execution time for all test cases: {total_time:.12f} seconds")

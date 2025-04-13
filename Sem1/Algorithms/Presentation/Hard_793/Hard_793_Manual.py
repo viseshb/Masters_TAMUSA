@@ -2,52 +2,47 @@
 #https://leetcode.com/problems/preimage-size-of-factorial-zeroes-function/
 
 
+from bisect import bisect_left
 import time
 
 class Solution:
     def preimageSizeFZF(self, k: int) -> int:
-        left = 0
-        right = 5 * (k + 1)
-        
-        while left <= right:
-            mid = left + (right - left) // 2
-            n = mid
-            count = 0
-            
-            # Calculate the number of trailing zeros in mid!
-            while n:
-                n //= 5
-                count += n
-            
-            # Adjust the binary search range based on the count of trailing zeros
-            if count < k:
-                left = mid + 1
-            elif count > k:
-                right = mid - 1
-            else:
-                # If count == k, it means there are exactly 5 numbers that will
-                # produce the same number of trailing zeros
-                return 5
-        
-        # If no such number is found, return 0
-        return 0
-    
-k= 3
+        def f(x):
+            if x == 0:
+                return 0
+            return x // 5 + f(x // 5)
+
+        def g(k):
+            return bisect_left(range(5 * k), k, key=f)
+
+        return g(k + 1) - g(k)
+
+test_cases = [
+    (51, 5),
+    (100, 5),
+    (84, 5),
+    (62, 5),
+    (73, 0),
+    (76, 5),
+    (27, 5),
+    (51, 5),
+    (85, 0),
+    (38, 5),
+]
+
+
 sol = Solution()
-
-# Run multiple iterations
-iterations = 10
 total_time = 0.0
-result = None
 
-for _ in range(iterations):
+for k, expected in test_cases:
     start_time = time.perf_counter()
     result = sol.preimageSizeFZF(k)
     end_time = time.perf_counter()
     execution_time = end_time - start_time
     total_time += execution_time
-    print(f"Execution time: {execution_time:.12f} seconds")
+    assert result == expected, f"Test failed for k({k}). Expected {expected}, got {result}"
+    print(f"Test passed for k=({k}). Execution time: {execution_time:.12f} seconds")
 
-average_time = total_time / iterations
-print("\nResult:", result)
-print(f"Average execution time over {iterations} runs: {average_time:.12f} seconds")      
+print(f"\nAll test cases passed successfully!")
+print(f"Total execution time for all test cases: {total_time:.12f} seconds")
+   

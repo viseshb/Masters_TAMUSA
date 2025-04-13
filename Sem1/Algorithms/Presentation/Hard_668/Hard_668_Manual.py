@@ -5,38 +5,44 @@ import time
 
 class Solution:
     def findKthNumber(self, m: int, n: int, k: int) -> int:
-        lo, hi = 1, m*n
-        while lo < hi:
-            mid, count = (lo+hi)//2, 0
-            # check how many numbers are smaller than mid
-            for i in range(1, m+1):
-                count += n if n<mid//i else mid//i
-            if count>=k:  # target <= mid
-                hi = mid
-            else:  # target > mid
-                lo = mid+1
-        return lo
-    
+        left, right = 1, m * n
+        while left < right:
+            mid = (left + right) >> 1
+            cnt = 0
+            for i in range(1, m + 1):
+                cnt += min(mid // i, n)
+            if cnt >= k:
+                right = mid
+            else:
+                left = mid + 1
+        return left
 
-m = 3
-n =3
-k =5
+
+test_cases = [
+    (802, 488, 222929 ,90774),
+    (353, 193, 15020, 3978),
+    (427, 932, 63865, 15105),
+    (437, 333, 108367, 55094),
+    (608, 993, 89762, 20704),
+    (418, 394, 93913, 38346),
+    (324, 308, 98762, 86100),
+    (44, 552, 547, 130),
+    (291, 434, 105147, 60916),
+    (701, 539, 53259, 12138)
+]
 
 sol = Solution()
-
-# Run multiple iterations
-iterations = 10
 total_time = 0.0
-result = None
 
-for _ in range(iterations):
+for m, n, k, expected in test_cases:
     start_time = time.perf_counter()
     result = sol.findKthNumber(m,n,k)
     end_time = time.perf_counter()
     execution_time = end_time - start_time
     total_time += execution_time
-    print(f"Execution time: {execution_time:.12f} seconds")
+    assert result == expected, f"Test failed for nums({m}, {n}, {k}). Expected {expected}, got {result}"
+    print(f"Test passed for nums=({m}, {n}, {k}). Execution time: {execution_time:.12f} seconds")
 
-average_time = total_time / iterations
-print("\nResult:", result)
-print(f"Average execution time over {iterations} runs: {average_time:.12f} seconds")  
+print(f"\nAll test cases passed successfully!")
+print(f"Total execution time for all test cases: {total_time:.12f} seconds")
+
