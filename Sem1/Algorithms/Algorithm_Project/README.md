@@ -1,0 +1,1 @@
+This project analyzes solutions to binary search problems by benchmarking and comparing the performance of human-written code against LLM-generated code (ChatGPT, Gemini, Claude) using the EffiBench framework for precise evaluation of execution time and memory usage.

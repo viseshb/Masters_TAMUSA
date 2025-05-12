@@ -1,0 +1,135 @@
+    #8 0x562f8850732b in nano_arena::Arena$LT$T$GT$::alloc_with::h1b3e4093e2dba6c1 /home/visesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nano_arena-0.5.1/src/lib.rs:198:9 
+    #9 0x562f8850578a in core::ops::function::FnOnce::call_once::h611883424bfb6492 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+    #10 0x562f885466ea in std::panic::catch_unwind::h8ad9b5de47da014c /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+    #11 0x562f885382df in std::panicking::try::do_call::h4ee586b5a5014448 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+    #12 0x562f8853ff1a in __rust_try std.ab53737f3e0643c2-cgu.02
+    #13 0x562f885466bd in std::panic::catch_unwind::h7615f4ac240c52c0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+    #14 0x562f885060af in std::rt::lang_start::h5711719962688e32 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:198:5     
+    #15 0x562f88506abd in main (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x20aabd) (BuildId: caf8be623932c16b2b598fc99c1065c6fc0a6fd0)
+    #16 0x7f5a5a44928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #17 0x562f88449cb4 in _start (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x14dcb4) (BuildId: caf8be623932c16b2b598fc99c1065c6fc0a6fd0)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/num.rs:225:28 in core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$i32$GT$::fmt::h1fa7afdd21967104
+Shadow bytes around the buggy address:
+  0x7bda596dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7bda596dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7bda596dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7bda596dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7bda596e0000: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 05 fa
+=>0x7bda596e0080: fa fa fa fa fd[fd]fd fd fd fd fd fd fd fd fd fd
+  0x7bda596e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bda596e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bda596e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bda596e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bda596e0300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2450==ABORTING
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ./target/x86_64-unknown-linux-gnu/debug/safe_code
+==2450==ABORTING
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ./target/x86_64-unknown-linux-gnu/debug/safe_code
+-bash: ./target/x86_64-unknown-linux-gnu/debug/safe_code: No such file or directory
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ cargo +nightly build -Z build-std --target x86_64-unknown-linux-gnu --bin safe_cod
+e
+e
+   Compiling libc v0.2.172
+   Compiling unwind v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/unwind)
+   Compiling libc v0.2.172
+   Compiling unwind v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/unwind)
+   Compiling panic_abort v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/panic_abort)
+Array after safe swap: [300, 200, 100, 400]
+
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ cargo +nightly miri run --bin unsafe_code
+Preparing a sysroot for Miri (target: x86_64-unknown-linux-gnu)... done
+   Compiling nano_arena v0.5.1
+   Compiling nano_arena_vuln v0.1.0 (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.72s
+     Running `/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo-miri runner target/miri/x86_64-unknown-linux-gnu/debug/unsafe_code`
+Array after safe swap: [300, 200, 100, 400]
+error: Undefined Behavior: out-of-bounds pointer use: alloc1216 has been freed, so this pointer is dangling
+  --> src/bin/unsafe_code.rs:25:48
+   |
+25 |         println!("Accessing after free: {:?}", *leaked_val);
+   |                                                ^^^^^^^^^^^ out-of-bounds pointer use: alloc1216 has been freed, so this pointer is dangling
+   |
+   = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+   = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+help: alloc1216 was allocated here:
+  --> src/bin/unsafe_code.rs:5:15
+   |
+5  |     let arr = arena.alloc([100, 200, 300, 400]); // allocate an array of 4 integers
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: alloc1216 was deallocated here:
+  --> src/bin/unsafe_code.rs:22:5
+   |
+22 |     drop(arena);
+   |     ^^^^^^^^^^^
+   = note: BACKTRACE (of the first span):
+   = note: inside `main` at src/bin/unsafe_code.rs:25:48: 25:59
+   = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+
+error: aborting due to 1 previous error
+
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ cargo +nightly miri run --bin safe_code
+   Compiling nano_arena_vuln v0.1.0 (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.52s
+     Running `/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo-miri runner target/miri/x86_64-unknown-linux-gnu/debug/safe_code`
+Array after safe swap: [300, 200, 100, 400]
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ MIRIFLAGS=-Zmiri-backtrace=full
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ cargo +nightly miri run --bin unsafe_code
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.07s
+     Running `/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo-miri runner target/miri/x86_64-unknown-linux-gnu/debug/unsafe_code`
+Array after safe swap: [300, 200, 100, 400]
+error: Undefined Behavior: out-of-bounds pointer use: alloc1216 has been freed, so this pointer is dangling
+  --> src/bin/unsafe_code.rs:25:48
+   |
+25 |         println!("Accessing after free: {:?}", *leaked_val);
+   |                                                ^^^^^^^^^^^ out-of-bounds pointer use: alloc1216 has been freed, so this pointer is dangling
+   |
+   = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+   = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+help: alloc1216 was allocated here:
+  --> src/bin/unsafe_code.rs:5:15
+   |
+5  |     let arr = arena.alloc([100, 200, 300, 400]); // allocate an array of 4 integers
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: alloc1216 was deallocated here:
+  --> src/bin/unsafe_code.rs:22:5
+   |
+22 |     drop(arena);
+   |     ^^^^^^^^^^^
+   = note: BACKTRACE (of the first span):
+   = note: inside `main` at src/bin/unsafe_code.rs:25:48: 25:59
+   = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+
+error: aborting due to 1 previous error
