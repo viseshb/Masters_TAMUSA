@@ -1,0 +1,16 @@
+Error: memory error: out of bound pointer
+File: libc/string/strcpy.c
+Line: 27
+assembly.ll line: 13424
+State: 1
+Stack: 
+	#000013424 in strcpy(138730296889344, 139146908717056) at libc/string/strcpy.c:27
+	#100008865 in bad_demo(139146908717056)
+	#200008917 in __klee_posix_wrapped_main(2, 139129728847872)
+	#300007143 in __user_main(3, 139954899439616, 139954899439648) at runtime/POSIX/klee_init_env.c:245
+	#400000556 in __uClibc_main(139940127100928, 3, 139954899439616, 0, 0, 0, 0) at libc/misc/internals/__uClibc_main.c:401
+	#500000721 in main(3, 139954899439616)
+Info: 
+	address: 138730296889354
+	next: object at 138709895794688 of size 4
+		MO6994[4] allocated at __user_main():  %4 = alloca i32, align 4

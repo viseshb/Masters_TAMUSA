@@ -1,0 +1,20 @@
+klee --libc=uclibc --posix-runtime --readable-posix-inputs --search=random-path -rng-initial-seed=3965049039 --output-dir=klee-out-CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01 bitcode-files/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.bc --sym-arg 20
+PID: 705
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-07-16 22:48:55
+BEGIN searcher description
+RandomPathSearcher
+END searcher description
+Finished: 2025-07-16 22:48:56
+Elapsed: 00:00:01
+KLEE: done: explored paths = 11
+KLEE: done: avg. constructs per query = 8
+KLEE: done: total queries = 51
+KLEE: done: valid queries = 0
+KLEE: done: invalid queries = 51
+KLEE: done: query cex = 51
+
+KLEE: done: total instructions = 17106
+KLEE: done: completed paths = 10
+KLEE: done: partially completed paths = 1
+KLEE: done: generated tests = 11

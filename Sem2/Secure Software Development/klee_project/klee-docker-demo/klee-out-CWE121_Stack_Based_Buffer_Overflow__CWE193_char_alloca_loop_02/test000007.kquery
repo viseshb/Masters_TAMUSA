@@ -1,0 +1,22 @@
+array arg00[21] : w32 -> w8 = symbolic
+(query [(Eq false
+             (Eq 0 (Read w8 0 arg00)))
+         (Eq false
+             (Eq 0 (Read w8 1 arg00)))
+         (Eq false
+             (Eq 0 (Read w8 2 arg00)))
+         (Eq false
+             (Eq 0 (Read w8 3 arg00)))
+         (Eq false
+             (Eq 0 (Read w8 4 arg00)))
+         (Eq false
+             (Eq 0 (Read w8 5 arg00)))
+         (Eq false
+             (Eq 0 (Read w8 6 arg00)))
+         (Eq false
+             (Eq 0 (Read w8 7 arg00)))
+         (Eq false
+             (Eq 0 (Read w8 8 arg00)))
+         (Eq false
+             (Eq 0 (Read w8 9 arg00)))]
+        false)

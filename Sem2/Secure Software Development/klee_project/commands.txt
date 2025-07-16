@@ -1,0 +1,10 @@
+cd "/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem2/Secure Software Development/klee_project/klee-docker-demo"
+
+
+docker run --rm -it \
+  -v "$(pwd)":/work \
+  klee-env bash
+
+cd work
+
+./run-hybrid.sh
