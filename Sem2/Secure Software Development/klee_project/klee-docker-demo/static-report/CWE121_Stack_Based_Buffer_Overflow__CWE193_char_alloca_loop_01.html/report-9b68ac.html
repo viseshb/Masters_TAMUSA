@@ -148,7 +148,7 @@ input.spoilerhider:checked + label + .spoiler{
 
 <!-- BUGCATEGORY Security -->
 
-<!-- BUGFILE /work/juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.c -->
+<!-- BUGFILE /work/klee-docker-demo/juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.c -->
 
 <!-- FILENAME CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.c -->
 
@@ -166,7 +166,7 @@ input.spoilerhider:checked + label + .spoiler{
 <!-- REPORTHEADER -->
 <h3>Bug Summary</h3>
 <table class="simpletable">
-<tr><td class="rowname">File:</td><td>/work/juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.c</td></tr>
+<tr><td class="rowname">File:</td><td>/work/klee-docker-demo/juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.c</td></tr>
 <tr><td class="rowname">Warning:</td><td><a href="#EndPath">line 18, column 5</a><br />Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119</td></tr>
 
 </table>
@@ -176,7 +176,7 @@ input.spoilerhider:checked + label + .spoiler{
    to see keyboard shortcuts</p>
 <input type="checkbox" class="spoilerhider" id="showinvocation" />
 <label for="showinvocation" >Show analyzer invocation</label>
-<div class="spoiler">clang -cc1 -cc1 -triple x86_64-pc-linux-gnu -analyze -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.c -analyzer-store=region -analyzer-opt-analyze-nested-blocks -analyzer-checker=core -analyzer-checker=apiModeling -analyzer-checker=unix -analyzer-checker=deadcode -analyzer-checker=security.insecureAPI.UncheckedReturn -analyzer-checker=security.insecureAPI.getpw -analyzer-checker=security.insecureAPI.gets -analyzer-checker=security.insecureAPI.mktemp -analyzer-checker=security.insecureAPI.mkstemp -analyzer-checker=security.insecureAPI.vfork -analyzer-checker=nullability.NullPassedToNonnull -analyzer-checker=nullability.NullReturnedFromNonnull -analyzer-output plist -w -setup-static-analyzer -mrelocation-model static -mframe-pointer=all -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fcoverage-compilation-dir=/work -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/work -ferror-limit 19 -fgnuc-version=4.2.1 -fcolor-diagnostics -analyzer-checker=security.insecureAPI.strcpy -analyzer-output=html -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o static-report/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.html -x c juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.c 
+<div class="spoiler">clang -cc1 -cc1 -triple x86_64-pc-linux-gnu -analyze -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.c -analyzer-store=region -analyzer-opt-analyze-nested-blocks -analyzer-checker=core -analyzer-checker=apiModeling -analyzer-checker=unix -analyzer-checker=deadcode -analyzer-checker=security.insecureAPI.UncheckedReturn -analyzer-checker=security.insecureAPI.getpw -analyzer-checker=security.insecureAPI.gets -analyzer-checker=security.insecureAPI.mktemp -analyzer-checker=security.insecureAPI.mkstemp -analyzer-checker=security.insecureAPI.vfork -analyzer-checker=nullability.NullPassedToNonnull -analyzer-checker=nullability.NullReturnedFromNonnull -analyzer-output plist -w -setup-static-analyzer -mrelocation-model static -mframe-pointer=all -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fcoverage-compilation-dir=/work/klee-docker-demo -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -D OMITGOOD -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/work/klee-docker-demo -ferror-limit 19 -fgnuc-version=4.2.1 -fcolor-diagnostics -analyzer-checker=security.insecureAPI.strcpy -analyzer-output=html -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o static-report/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.html -x c juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01.c 
 </div>
 <div id='tooltiphint' hidden="true">
   <p>Keyboard shortcuts: </p>

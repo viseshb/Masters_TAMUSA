@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_02.c</title>
+<title>juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_03.c</title>
 
 <style type="text/css">
 body { color:#000000; background-color:#ffffff }
@@ -148,15 +148,15 @@ input.spoilerhider:checked + label + .spoiler{
 
 <!-- BUGCATEGORY Security -->
 
-<!-- BUGFILE /work/juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_02.c -->
+<!-- BUGFILE /work/klee-docker-demo/juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_03.c -->
 
-<!-- FILENAME CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_02.c -->
+<!-- FILENAME CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_03.c -->
 
 <!-- FUNCTIONNAME main -->
 
 <!-- ISSUEHASHCONTENTOFLINEINCONTEXT 39d631510793178d4181fe51c6306a94 -->
 
-<!-- BUGLINE 25 -->
+<!-- BUGLINE 49 -->
 
 <!-- BUGCOLUMN 5 -->
 
@@ -166,8 +166,8 @@ input.spoilerhider:checked + label + .spoiler{
 <!-- REPORTHEADER -->
 <h3>Bug Summary</h3>
 <table class="simpletable">
-<tr><td class="rowname">File:</td><td>/work/juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_02.c</td></tr>
-<tr><td class="rowname">Warning:</td><td><a href="#EndPath">line 25, column 5</a><br />Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119</td></tr>
+<tr><td class="rowname">File:</td><td>/work/klee-docker-demo/juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_03.c</td></tr>
+<tr><td class="rowname">Warning:</td><td><a href="#EndPath">line 49, column 5</a><br />Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119</td></tr>
 
 </table>
 <!-- REPORTSUMMARYEXTRA -->
@@ -176,7 +176,7 @@ input.spoilerhider:checked + label + .spoiler{
    to see keyboard shortcuts</p>
 <input type="checkbox" class="spoilerhider" id="showinvocation" />
 <label for="showinvocation" >Show analyzer invocation</label>
-<div class="spoiler">clang -cc1 -cc1 -triple x86_64-pc-linux-gnu -analyze -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_02.c -analyzer-store=region -analyzer-opt-analyze-nested-blocks -analyzer-checker=core -analyzer-checker=apiModeling -analyzer-checker=unix -analyzer-checker=deadcode -analyzer-checker=security.insecureAPI.UncheckedReturn -analyzer-checker=security.insecureAPI.getpw -analyzer-checker=security.insecureAPI.gets -analyzer-checker=security.insecureAPI.mktemp -analyzer-checker=security.insecureAPI.mkstemp -analyzer-checker=security.insecureAPI.vfork -analyzer-checker=nullability.NullPassedToNonnull -analyzer-checker=nullability.NullReturnedFromNonnull -analyzer-output plist -w -setup-static-analyzer -mrelocation-model static -mframe-pointer=all -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fcoverage-compilation-dir=/work -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/work -ferror-limit 19 -fgnuc-version=4.2.1 -fcolor-diagnostics -analyzer-checker=security.insecureAPI.strcpy -analyzer-output=html -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o static-report/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_02.html -x c juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_02.c 
+<div class="spoiler">clang -cc1 -cc1 -triple x86_64-pc-linux-gnu -analyze -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_03.c -analyzer-store=region -analyzer-opt-analyze-nested-blocks -analyzer-checker=core -analyzer-checker=apiModeling -analyzer-checker=unix -analyzer-checker=deadcode -analyzer-checker=security.insecureAPI.UncheckedReturn -analyzer-checker=security.insecureAPI.getpw -analyzer-checker=security.insecureAPI.gets -analyzer-checker=security.insecureAPI.mktemp -analyzer-checker=security.insecureAPI.mkstemp -analyzer-checker=security.insecureAPI.vfork -analyzer-checker=nullability.NullPassedToNonnull -analyzer-checker=nullability.NullReturnedFromNonnull -analyzer-output plist -w -setup-static-analyzer -mrelocation-model static -mframe-pointer=all -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fcoverage-compilation-dir=/work/klee-docker-demo -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -D OMITGOOD -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/work/klee-docker-demo -ferror-limit 19 -fgnuc-version=4.2.1 -fcolor-diagnostics -analyzer-checker=security.insecureAPI.strcpy -analyzer-output=html -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o static-report/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_03.html -x c juliet/testcases/CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_03.c 
 </div>
 <div id='tooltiphint' hidden="true">
   <p>Keyboard shortcuts: </p>
@@ -188,7 +188,7 @@ input.spoilerhider:checked + label + .spoiler{
   <a href="#" onclick="toggleHelp(); return false;">Close</a>
 </div>
 <script type='text/javascript'>
-var relevant_lines = {"1": {"25": 1}};
+var relevant_lines = {"1": {"49": 1}};
 
 var filterCounterexample = function (hide) {
   var tables = document.getElementsByClassName("code");
@@ -362,8 +362,8 @@ window.addEventListener("keydown", function (event) {
 <tr class="codeline" data-linenumber="12"><td class="num" id="LN12">12</td><td class="line">    <span class='keyword'>char</span> buf_good[10 + 1];   <span class='comment'>/* room for '\0' */</span></td></tr>
 <tr class="codeline" data-linenumber="13"><td class="num" id="LN13">13</td><td class="line">    <span class='keyword'>char</span> *data;</td></tr>
 <tr class="codeline" data-linenumber="14"><td class="num" id="LN14">14</td><td class="line"></td></tr>
-<tr class="codeline" data-linenumber="15"><td class="num" id="LN15">15</td><td class="line">    <span class='comment'>/* --- Bad case: if(1) --- */</span></td></tr>
-<tr class="codeline" data-linenumber="16"><td class="num" id="LN16">16</td><td class="line">    <span class='keyword'>if</span> (1) {</td></tr>
+<tr class="codeline" data-linenumber="15"><td class="num" id="LN15">15</td><td class="line">    <span class='comment'>/* --- Bad case (overflow) --- */</span></td></tr>
+<tr class="codeline" data-linenumber="16"><td class="num" id="LN16">16</td><td class="line">    <span class='keyword'>if</span> (5 == 5) {</td></tr>
 <tr class="codeline" data-linenumber="17"><td class="num" id="LN17">17</td><td class="line">        <span class='comment'>/* FLAW: data → undersized buffer */</span></td></tr>
 <tr class="codeline" data-linenumber="18"><td class="num" id="LN18">18</td><td class="line">        data = buf_bad;</td></tr>
 <tr class="codeline" data-linenumber="19"><td class="num" id="LN19">19</td><td class="line">    } <span class='keyword'>else</span> {</td></tr>
@@ -372,12 +372,11 @@ window.addEventListener("keydown", function (event) {
 <tr class="codeline" data-linenumber="22"><td class="num" id="LN22">22</td><td class="line">    }</td></tr>
 <tr class="codeline" data-linenumber="23"><td class="num" id="LN23">23</td><td class="line">    data[0] = '\0';</td></tr>
 <tr class="codeline" data-linenumber="24"><td class="num" id="LN24">24</td><td class="line">    <span class='comment'>/* POTENTIAL OVERFLOW: copies strlen(input)+1 bytes into a 10‑byte buffer */</span></td></tr>
-<tr class="codeline" data-linenumber="25"><td class="num" id="LN25">25</td><td class="line">    <span class="mrange">strcpy</span>(data, input);</td></tr>
-<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:5ex; max-width:52em">Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119</div></td></tr>
+<tr class="codeline" data-linenumber="25"><td class="num" id="LN25">25</td><td class="line">    strcpy(data, input);</td></tr>
 <tr class="codeline" data-linenumber="26"><td class="num" id="LN26">26</td><td class="line">    printf(<span class='string_literal'>"Bad result:    %s\n"</span>, data);</td></tr>
 <tr class="codeline" data-linenumber="27"><td class="num" id="LN27">27</td><td class="line"></td></tr>
-<tr class="codeline" data-linenumber="28"><td class="num" id="LN28">28</td><td class="line">    <span class='comment'>/* --- GoodG2B1: if(0)/else --- */</span></td></tr>
-<tr class="codeline" data-linenumber="29"><td class="num" id="LN29">29</td><td class="line">    <span class='keyword'>if</span> (0) {</td></tr>
+<tr class="codeline" data-linenumber="28"><td class="num" id="LN28">28</td><td class="line">    <span class='comment'>/* --- GoodG2B1 (safe via else) --- */</span></td></tr>
+<tr class="codeline" data-linenumber="29"><td class="num" id="LN29">29</td><td class="line">    <span class='keyword'>if</span> (5 != 5) {</td></tr>
 <tr class="codeline" data-linenumber="30"><td class="num" id="LN30">30</td><td class="line">        <span class='comment'>/* dead code */</span></td></tr>
 <tr class="codeline" data-linenumber="31"><td class="num" id="LN31">31</td><td class="line">        data = buf_bad;</td></tr>
 <tr class="codeline" data-linenumber="32"><td class="num" id="LN32">32</td><td class="line">    } <span class='keyword'>else</span> {</td></tr>
@@ -388,8 +387,8 @@ window.addEventListener("keydown", function (event) {
 <tr class="codeline" data-linenumber="37"><td class="num" id="LN37">37</td><td class="line">    strcpy(data, input);  <span class='comment'>/* safe if input ≤10 chars */</span></td></tr>
 <tr class="codeline" data-linenumber="38"><td class="num" id="LN38">38</td><td class="line">    printf(<span class='string_literal'>"GoodG2B1 result: %s\n"</span>, data);</td></tr>
 <tr class="codeline" data-linenumber="39"><td class="num" id="LN39">39</td><td class="line"></td></tr>
-<tr class="codeline" data-linenumber="40"><td class="num" id="LN40">40</td><td class="line">    <span class='comment'>/* --- GoodG2B2: if(1) --- */</span></td></tr>
-<tr class="codeline" data-linenumber="41"><td class="num" id="LN41">41</td><td class="line">    <span class='keyword'>if</span> (1) {</td></tr>
+<tr class="codeline" data-linenumber="40"><td class="num" id="LN40">40</td><td class="line">    <span class='comment'>/* --- GoodG2B2 (safe via if) --- */</span></td></tr>
+<tr class="codeline" data-linenumber="41"><td class="num" id="LN41">41</td><td class="line">    <span class='keyword'>if</span> (5 == 5) {</td></tr>
 <tr class="codeline" data-linenumber="42"><td class="num" id="LN42">42</td><td class="line">        <span class='comment'>/* FIX: data → properly sized buffer */</span></td></tr>
 <tr class="codeline" data-linenumber="43"><td class="num" id="LN43">43</td><td class="line">        data = buf_good;</td></tr>
 <tr class="codeline" data-linenumber="44"><td class="num" id="LN44">44</td><td class="line">    } <span class='keyword'>else</span> {</td></tr>
@@ -397,7 +396,8 @@ window.addEventListener("keydown", function (event) {
 <tr class="codeline" data-linenumber="46"><td class="num" id="LN46">46</td><td class="line">        data = buf_bad;</td></tr>
 <tr class="codeline" data-linenumber="47"><td class="num" id="LN47">47</td><td class="line">    }</td></tr>
 <tr class="codeline" data-linenumber="48"><td class="num" id="LN48">48</td><td class="line">    data[0] = '\0';</td></tr>
-<tr class="codeline" data-linenumber="49"><td class="num" id="LN49">49</td><td class="line">    strcpy(data, input);  <span class='comment'>/* safe if input ≤10 chars */</span></td></tr>
+<tr class="codeline" data-linenumber="49"><td class="num" id="LN49">49</td><td class="line">    <span class="mrange">strcpy</span>(data, input);  <span class='comment'>/* safe if input ≤10 chars */</span></td></tr>
+<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:5ex; max-width:52em">Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119</div></td></tr>
 <tr class="codeline" data-linenumber="50"><td class="num" id="LN50">50</td><td class="line">    printf(<span class='string_literal'>"GoodG2B2 result: %s\n"</span>, data);</td></tr>
 <tr class="codeline" data-linenumber="51"><td class="num" id="LN51">51</td><td class="line"></td></tr>
 <tr class="codeline" data-linenumber="52"><td class="num" id="LN52">52</td><td class="line">    <span class='keyword'>return</span> 0;</td></tr>
