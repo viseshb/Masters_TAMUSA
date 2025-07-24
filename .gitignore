@@ -1,0 +1,4 @@
+.venv/
+*.pyc
+__pycache__/
+Sem2/Secure Software Development/pySa_assignment/tutorial/

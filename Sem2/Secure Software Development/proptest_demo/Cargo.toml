@@ -1,0 +1,15 @@
+[package]
+name = "proptest_demo"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+proptest = "1.6.0"
+
+assert_cmd = "2.0"
+predicates = "2.1"
+
+[workspace]
+members = [
+  "C:/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem2/Secure Software Development/proptest_demo",  
+]
