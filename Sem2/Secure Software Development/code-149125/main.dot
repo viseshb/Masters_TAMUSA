@@ -1,0 +1,44 @@
+digraph "main" {  
+node [shape="rect"];  
+"30064771110" [label = <&lt;operator&gt;.assignment, 61<BR/>*buf = (char *)NULL> ]
+"30064771112" [label = <&lt;operator&gt;.assignment, 62<BR/>buf = malloc(25*sizeof(char))> ]
+"141733920771" [label = <RETURN, 74<BR/>return 0;> ]
+"30064771111" [label = <&lt;operator&gt;.cast, 61<BR/>(char *)NULL> ]
+"30064771113" [label = <malloc, 62<BR/>malloc(25*sizeof(char))> ]
+"30064771116" [label = <&lt;operator&gt;.notEquals, 64<BR/>buf != (char *)NULL> ]
+"176093659137" [label = <TYPE_REF, 61<BR/>char *> ]
+"30064771114" [label = <&lt;operator&gt;.multiplication, 62<BR/>25*sizeof(char)> ]
+"30064771117" [label = <&lt;operator&gt;.cast, 64<BR/>(char *)NULL> ]
+"30064771118" [label = <&lt;operator&gt;.assignment, 66<BR/>*t = rand_text()> ]
+"30064771123" [label = <free, 72<BR/>free(buf)> ]
+"30064771115" [label = <&lt;operator&gt;.sizeOf, 62<BR/>sizeof(char)> ]
+"176093659138" [label = <TYPE_REF, 64<BR/>char *> ]
+"30064771119" [label = <rand_text, 66<BR/>rand_text()> ]
+"68719476770" [label = <IDENTIFIER, 67<BR/>t<BR/>if (t) { strcpy(buf,t); /* FLAW */ ...> ]
+"30064771120" [label = <strcpy, 68<BR/>strcpy(buf,t)> ]
+"30064771121" [label = <free, 69<BR/>free(t)> ]
+"30064771122" [label = <printf, 70<BR/>printf(&quot;%s\n&quot;, buf)> ]
+"107374182403" [label = <METHOD, 59<BR/>main> ]
+"124554051586" [label = <METHOD_RETURN, 59<BR/>int> ]
+  "30064771110" -> "30064771115" 
+  "30064771112" -> "176093659138" 
+  "141733920771" -> "124554051586" 
+  "30064771111" -> "30064771110" 
+  "30064771113" -> "30064771112" 
+  "30064771116" -> "30064771119" 
+  "30064771116" -> "141733920771" 
+  "176093659137" -> "30064771111" 
+  "30064771114" -> "30064771113" 
+  "30064771117" -> "30064771116" 
+  "30064771118" -> "68719476770" 
+  "30064771123" -> "141733920771" 
+  "30064771115" -> "30064771114" 
+  "176093659138" -> "30064771117" 
+  "30064771119" -> "30064771118" 
+  "68719476770" -> "30064771120" 
+  "68719476770" -> "30064771123" 
+  "30064771120" -> "30064771121" 
+  "30064771121" -> "30064771122" 
+  "30064771122" -> "30064771123" 
+  "107374182403" -> "176093659137" 
+}
