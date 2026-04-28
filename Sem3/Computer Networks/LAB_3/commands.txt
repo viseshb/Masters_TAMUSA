@@ -1,0 +1,21 @@
+ns3
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem3/Computer Networks/LAB_3/ns-3.45$ 
+./ns3 build scratch/main.cc
+./ns3 run "scratch/main.cc --mode=static"
+./ns3 run "scratch/main.cc --mode=wireguard"
+./ns3 run "scratch/main.cc --mode=sshuttle"
+
+netanim
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem3/Computer Networks/LAB_3/netanim/build$ make -j$(nproc)
+./Netanim
+
+
+omnetpp
+cd ~/omnetpp-6.2.0/CrossSubnet_VM_Connectivity
+./configure
+make clean
+make
+opp_run -u Qtenv -f omnetpp.ini -c Static
+cd ~/omnetpp-6.2.0/inet4.5
+make clean
+make

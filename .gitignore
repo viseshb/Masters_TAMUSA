@@ -1,4 +1,65 @@
+###############################################
+# PYTHON & ENVIRONMENTS
+###############################################
+
+# Virtual environments
+venv/
+*/venv/
 .venv/
-*.pyc
+env/
+*/env/
+
+# Python cache
 __pycache__/
-Sem2/Secure Software Development/pySa_assignment/tutorial/
+*.pyc
+*.pyo
+*.pyd
+
+# Build / Packaging
+*.egg-info/
+.eggs/
+dist/
+build/
+
+###############################################
+# JUPYTER & EXPERIMENT OUTPUTS
+###############################################
+
+.ipynb_checkpoints/
+*.xml
+*.log
+*.npy
+*.png
+*.pth
+*.zip
+
+###############################################
+# MACHINE LEARNING / DL COURSEWORK
+###############################################
+
+# Assignment 3 outputs & checkpoints
+Sem3/Machine Learning And Deep Learning/Assignment_3/
+
+###############################################
+# SECURE SOFTWARE DEVELOPMENT PROJECT
+###############################################
+
+# Ignore the bin folder causing the git freeze
+Sem2/Secure Software Development/pySa_assignment/tutorial/bin/
+
+###############################################
+# COMPUTER NETWORKS / OMNET / NS3
+###############################################
+
+# Generated simulation results
+Sem3/Computer Networks/**/results/
+*.pcap
+
+###############################################
+# ONE DRIVE / EDITOR JUNK
+###############################################
+
+~$*
+*.tmp
+.DS_Store
+Thumbs.db

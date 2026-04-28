@@ -1,5 +1,0 @@
-Testcase,StaticLine,KLEEError?,ErrorTest,NativeStatus,KLEEOutDir,RNGSeed,OverflowString
-CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01,9,yes,test000007,CRASH,klee-out-CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_01,1279466950,"(@       @   @  @@  ("
-CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_02,25,yes,test000006,CRASH,klee-out-CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_02,2797858946,"(@       @   @  @@  ("
-CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_03,25,yes,test000007,CRASH,klee-out-CWE121_Stack_Based_Buffer_Overflow__CWE193_char_alloca_loop_03,3273812034,"(@       @   @  @@  ("
-good_code,,no,,NO_ERR,klee-out-good_code,4209845295,""

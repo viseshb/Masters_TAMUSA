@@ -1,0 +1,51 @@
+---- Summary of ns-3 settings:
+Build profile                 : default
+Build directory               : /mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem3/Computer Networks/LAB_3/ns-3.45/build
+Build with runtime asserts    : [32mON[0m
+Build with runtime logging    : [32mON[0m
+Build version embedding       : OFF (not requested)
+BRITE Integration             : [31mOFF (Missing headers: "Brite.h" and missing libraries: "brite")[0m
+DES Metrics event collection  : OFF (not requested)
+DPDK NetDevice                : OFF (not requested)
+Emulation FdNetDevice         : [32mON[0m
+Examples                      : [32mON[0m
+File descriptor NetDevice     : [32mON[0m
+GNU Scientific Library (GSL)  : [31mOFF (GSL was not found)[0m
+GtkConfigStore                : [32mON[0m
+LibXml2 support               : [32mON[0m
+MPI Support                   : OFF (not requested)
+ns-3 Click Integration        : [31mOFF (Missing headers: "simclick.h" and missing libraries: "nsclick;click")[0m
+ns-3 OpenFlow Integration     : [31mOFF (Missing headers: "openflow.h" and missing libraries: "openflow")[0m
+Netmap emulation FdNetDevice  : [31mOFF (missing dependency)[0m
+PyViz visualizer              : [32mON[0m
+Python Bindings               : [32mON[0m
+SQLite support                : [32mON[0m
+Eigen3 support                : [32mON[0m
+Tap Bridge                    : [32mON[0m
+Tap FdNetDevice               : [32mON[0m
+Tests                         : [32mON[0m
+
+
+Modules configured to be built:
+antenna                   aodv                      applications              
+aqm-eval-suite            bridge                    buildings                 
+config-store              core                      csma                      
+csma-layout               dsdv                      dsr                       
+energy                    fd-net-device             flow-monitor              
+internet                  internet-apps             lorawan                   
+lr-wpan                   lte                       mesh                      
+mobility                  netanim                   netsimulyzer              
+network                   nix-vector-routing        nr                        
+olsr                      oran                      point-to-point            
+point-to-point-layout     propagation               sip                       
+sixlowpan                 spectrum                  stats                     
+tap-bridge                test                      topology-read             
+traffic-control           uan                       uart-net-device           
+virtual-net-device        visualizer                wban                      
+wifi                      wimax                     zigbee                    
+
+
+Modules that cannot be built:
+brite                     click                     mpi                       
+openflow                  quantum                   
+
